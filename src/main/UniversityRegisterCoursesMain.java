@@ -71,7 +71,7 @@ public class UniversityRegisterCoursesMain {
                 break;
             case TRAINEE_CHOICE.INSERT:
                 System.out.println("");
-                traineeManager.traineeRegistr();
+                traineeManager.traineeRegister();
                 break;
             case TRAINEE_CHOICE.UPDATE:
                 System.out.println("");
@@ -126,11 +126,11 @@ public class UniversityRegisterCoursesMain {
         switch (choice) {
             case STUDENT_CHOICE.INSERT:
                 System.out.println("");
-                studentManager.studentRegistr();
+                studentManager.studentRegister();
                 break;
             case STUDENT_CHOICE.UPDATE:
                 System.out.println("");
-                studentManager.studentUPdate();
+                studentManager.studentUpdate();
                 break;
             case STUDENT_CHOICE.LIST:
                 System.out.println("");
@@ -158,7 +158,7 @@ public class UniversityRegisterCoursesMain {
                 break;
             case LESSON_CHOICE.INSERT:
                 System.out.println("");
-                lessonManager.lessonRegistr();
+                lessonManager.lessonRegister();
                 break;
             case LESSON_CHOICE.UPDATE:
                 System.out.println("");

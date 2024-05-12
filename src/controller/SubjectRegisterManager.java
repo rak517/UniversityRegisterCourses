@@ -61,7 +61,7 @@ public class SubjectRegisterManager {
         System.out.println("수정할 학과 일련번호 입력");
         System.out.print("일련번호 : ");
         s_no = sc.nextInt();
-
+        sc.nextLine();
         System.out.println();
         System.out.println("새로운 정보 모두 입력");
         System.out.print("학과번호 : ");
