@@ -174,9 +174,9 @@ public class StudentDAO {
                 loginSuccess = true; //로그인 성공
             }
         } catch (SQLException e) {
-            System.out.println("e=[" + e + "]");
+            e.printStackTrace();
         } catch (Exception e) {
-            System.out.println("e=[" + e + "]");
+            e.printStackTrace();
         } finally {
             try {
                 if (rs != null)
@@ -204,6 +204,7 @@ public class StudentDAO {
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, id);
             pstmt.setString(2, pw);
+            rs = pstmt.executeQuery();
             if (rs.next()) {
                 sd_num = rs.getString("sd_num");
             }
@@ -239,7 +240,7 @@ public class StudentDAO {
             pstmt.setString(2, pw);
             rs = pstmt.executeQuery();
 
-            System.out.println("일련번호\t학생번호\t\t성명\t아이디\t\t비밀번호\t\t학과\t\t생년월일\t\t전화번호\t\t주소\t\t\t이메일" +
+            System.out.println("일련번호\t\t학생번호\t\t성명\t\t아이디\t\t비밀번호\t\t학과\t\t생년월일\t\t전화번호\t\t주소\t\t\t이메일" +
                     "\t\t\t등록일자");
 
             if (rs.next()){
@@ -255,9 +256,9 @@ public class StudentDAO {
                 svo.setSd_address(rs.getString("sd_address"));
                 svo.setSd_email(rs.getString("sd_email"));
                 svo.setSd_date(rs.getDate("sd_date") + "");
-                System.out.println(svo.getNo() + "\t" + svo.getSd_num() + "\t" + svo.getSd_name() + "\t" +
-                        svo.getSd_id() + "\t" + svo.getSd_passwd() + "\t" + svo.getS_num() + "\t\t" + svo.getSd_birthday() + "\t" +
-                        svo.getSd_phone() + "\t" + svo.getSd_address() + "\t" + svo.getSd_email() + "\t" + svo.getSd_date());
+                System.out.println(svo.getNo() + "\t\t" + svo.getSd_num() + "\t\t" + svo.getSd_name() + "\t\t" +
+                        svo.getSd_id() + "\t\t" + svo.getSd_passwd() + "\t\t" + svo.getS_num() + "\t\t" + svo.getSd_birthday() + "\t\t" +
+                        svo.getSd_phone() + "\t\t" + svo.getSd_address() + "\t\t\t" + svo.getSd_email() + "\t\t\t" + svo.getSd_date());
             }
         } catch (SQLException e){
             System.out.println("e=[" + e + "]");

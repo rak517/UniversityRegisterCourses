@@ -74,7 +74,7 @@ public class TraineeRegisterManager {
         System.out.println("수강 신청을 위한 정보 입력");
         do{
             System.out.print("아이디 : ");
-            id = sc.next();
+            id = sc.nextLine();
             System.out.print("비밀번호 : ");
             pw = sc.nextLine();
 

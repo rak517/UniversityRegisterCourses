@@ -23,14 +23,14 @@ public class SubjectDAO {
             con = DBUtil.makeConnection();
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
-            System.out.println("일련번호\t학과번호\t학과명");
+            System.out.println("일련번호\t\t학과번호\t\t학과명");
 
             while (rs.next()) {
                 sVo = new SubjectVO();
                 sVo.setNo(rs.getInt("no"));
                 sVo.setS_num(rs.getString("s_num"));
                 sVo.setS_name(rs.getString("s_name"));
-                System.out.println(sVo.getNo() + "\t" + sVo.getS_num() + "\t" + sVo.getS_name());
+                System.out.println(sVo.getNo() + "\t\t\t" + sVo.getS_num() + "\t\t\t" + sVo.getS_name());
             }
         } catch (IOException | SQLException e) {
             throw new RuntimeException(e);

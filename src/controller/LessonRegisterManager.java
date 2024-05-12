@@ -45,6 +45,7 @@ public class LessonRegisterManager {
     //과목 수정 관리
     public void lessonUpdate() {
         Scanner sc = new Scanner(System.in);
+        Scanner sc1 = new Scanner(System.in);
 
         LessonDAO ld = new LessonDAO();
         LessonVO lvo = new LessonVO();
@@ -55,7 +56,7 @@ public class LessonRegisterManager {
 
         System.out.println("수정할 과목 일련번호 입력");
         System.out.print("일련번호 : ");
-        l_no = sc.nextInt();
+        l_no = sc1.nextInt();
 
         System.out.println();
         System.out.println("새로운 정보 모두 입력");
@@ -92,7 +93,7 @@ public class LessonRegisterManager {
         System.out.print("일련번호 : ");
         l_no = sc.nextInt();
 
-        ld.getLessonTotalList();
+        ld.setLessonDelete(l_no);
 
         System.out.println();
         System.out.println("학과 전체 리스트");

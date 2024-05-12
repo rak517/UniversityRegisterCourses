@@ -80,6 +80,7 @@ public class StudentRegisterManager {
     //학생정보수정
     public void studentUpdate(){
         Scanner sc = new Scanner(System.in);
+        Scanner sc1 = new Scanner(System.in);
         StudentDAO sdao = new StudentDAO();
         StudentVO svo = new StudentVO();
 
@@ -96,7 +97,7 @@ public class StudentRegisterManager {
         do {
             System.out.print("아이디 : ");
             id = sc.nextLine();
-            System.out.println("비밀번호 : ");
+            System.out.print("비밀번호 : ");
             pw = sc.nextLine();
             success = sdao.getStudentLogin(id, pw);
 

@@ -21,7 +21,7 @@ public class LessonDAO {
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
 
-            System.out.println("일련번호\t과목약어\t과목명");
+            System.out.println("일련번호\t\t과목약어\t\t과목명");
 
             while(rs.next()){
                 lVo = new LessonVO();
@@ -29,7 +29,7 @@ public class LessonDAO {
                 lVo.setL_abbre(rs.getString("l_abbre"));
                 lVo.setL_name(rs.getString("l_name"));
 
-                System.out.println(lVo.getNo()+"\t"+lVo.getL_abbre()+"\t"+lVo.getL_name());
+                System.out.println(lVo.getNo()+"\t\t"+lVo.getL_abbre()+"\t\t"+lVo.getL_name());
             }
         } catch (SQLException e) {
             System.out.println(e);
@@ -48,7 +48,7 @@ public class LessonDAO {
     }
     //과목 등록
     public void setLessonRegister(LessonVO lVo){
-        String sql = "insert into lesson" + "(no,l_abbre,l_name)"+"values(?,?,?)" + "(lesson_seq.nextval,?,?)";
+        String sql = "insert into lesson" + "(no,l_abbre,l_name)"+"values" + "(lesson_seq.nextval,?,?)";
         Connection con = null;
         PreparedStatement pstmt = null;
 

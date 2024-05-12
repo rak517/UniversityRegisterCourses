@@ -81,9 +81,9 @@ public class TraineeDAO {
     //개인 수강 신청 전체 목록
     public void getTraineeTotalList(String sd_num){
         String sql = "select tr.no as no, tr.sd_num as sd_num, tr.l_abbre as" +
-                "l_abbre, le.l_name as l_name, st.sd_name as sd_name, t_section, t_date" +
-                "from trainee tr, lesson le, student st" +
-                "where tr.sd_num = ? and tr.l_abbre = le.l_abbre and tr.sd_num = st.sd_num order by t_date";
+                " l_abbre, le.l_name as l_name, st.sd_name as sd_name, t_section, t_date" +
+                " from trainee tr, lesson le, student st" +
+                " where tr.sd_num = ? and tr.l_abbre = le.l_abbre and tr.sd_num = st.sd_num order by t_date";
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -96,7 +96,7 @@ public class TraineeDAO {
             pstmt.setString(1, sd_num);
             rs = pstmt.executeQuery();
 
-            System.out.println("일련번호\t학생번호\t\t과목약어\t과목명\t학생이름\t과목구분\t등록일");
+            System.out.println("일련번호\t\t학생번호\t\t과목약어\t\t과목명\t\t학생이름\t\t과목구분\t\t등록일");
 
             while(rs.next()){
                 tVo = new TraineeVO();
@@ -106,8 +106,8 @@ public class TraineeDAO {
                 tVo.setT_section(rs.getString("t_section"));
                 tVo.setT_date(rs.getString("t_date"));
 
-                System.out.println(tVo.getNo() + "\t" + tVo.getSd_num() + "\t" + tVo.getL_abbre() + "\t" + rs.getString("l_name")
-                + "\t" + rs.getString("sd_name") + "\t" + tVo.getT_section() + "\t" + tVo.getT_date());
+                System.out.println(tVo.getNo() + "\t\t" + tVo.getSd_num() + "\t\t" + tVo.getL_abbre() + "\t\t" + rs.getString("l_name")
+                + "\t\t" + rs.getString("sd_name") + "\t\t" + tVo.getT_section() + "\t\t" + tVo.getT_date());
             }
         } catch (SQLException e){
             System.out.println("e=[" + e + "]");
